@@ -6,6 +6,7 @@ The purpose of this APP is to demonstrate, what it takes for a developer to inte
 # Deployment
 
 - Deploy the App
+  - `` oc create -f default-bucket.yaml ``
   - `` oc create -f photo_album_app_on_OCS_OBC.yaml ``
 
 
