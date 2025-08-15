@@ -130,16 +130,18 @@ spec:
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  annotations:
-    openshift.io/host.generated: "true"
   labels:
     app: photo-album
   name: photo-album
 spec:
-  subdomain: ""
   to:
     kind: Service
     name: photo-album
     weight: 100
+  port:
+    targetPort: web
   wildcardPolicy: None
+  tls:
+    termination: Edge
+    insecureEdgeTerminationPolicy: Redirect # Redirects HTTP traffic to HTTPS
 ...
